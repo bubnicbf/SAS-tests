@@ -1,0 +1,11 @@
+/*
+Multivariate multiple regression is used when you have two or more dependent variables that are to be predicted from two or more predictor variables.  In our example, we will predict write and read from female, math, science and social studies (socst) scores.  The mtest statement in the proc reg is used to test hypotheses in multivariate regression models where there are several independent variables fit to the same dependent variables.  If no equations or options are specified, the mtest statement tests the hypothesis that all estimated parameters except the intercept are zero.  In other words, the multivariate tests test whether the independent variable specified predicts the dependent variables together, holding all of the other independent variables constant.  You can put a label in front of the mtest statement to aid in the interpretation of the output (this is particularly useful when you have multiple mtest statements).
+*/
+proc reg data = "c:\mydata\hsb2";
+  model write read = female math science socst;
+  female: mtest female;
+  math:  mtest math;
+  science:  mtest science;
+  socst:  mtest socst;
+run;
+quit;
