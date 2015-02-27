@@ -1,0 +1,6 @@
+/*
+A one sample median test allows us to test whether a sample median differs significantly from a hypothesized value.  We will use the same variable, write, as we did in the one sample t-test example above, but we do not need to assume that it is interval and normally distributed (we only need to assume that write is an ordinal variable).  We will test whether the median writing score (write) differs significantly from 50.  The loccount option on the proc univariate statement provides the location counts of the data shown at the bottom of the output.
+*/
+proc univariate data = "c:\mydata\hsb2" loccount mu0 = 50;
+  var write;
+run;
