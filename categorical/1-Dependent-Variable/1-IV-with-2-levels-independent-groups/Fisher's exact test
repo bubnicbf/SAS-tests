@@ -1,0 +1,6 @@
+/*
+The Fisher's exact test is used when you want to conduct a chi-square test, but one or more of your cells has an expected frequency of five or less.  Remember that the chi-square test assumes that each cell has an expected frequency of five or more, but the Fisher's exact test has no such assumption and can be used regardless of how small the expected frequency is. In the example below, we have cells with observed frequencies of two and one, which may indicate expected frequencies that could be below five, so we will use Fisher's exact test with the fisher option on the tables statement.
+*/
+proc freq data = "c:\mydata\hsb2";
+  tables schtyp*race / fisher;
+run;
