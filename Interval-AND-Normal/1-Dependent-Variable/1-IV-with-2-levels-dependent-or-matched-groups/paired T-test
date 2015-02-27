@@ -1,0 +1,6 @@
+/*
+A paired (samples) t-test is used when you have two related observations (i.e., two observations per subject) and you want to see if the means on these two normally distributed interval variables differ from one another.  For example, using the hsb2 data file we will test whether the mean of read is equal to the mean of write.
+*/
+proc ttest data = "c:\mydata\hsb2";
+  paired write*read;
+run;
