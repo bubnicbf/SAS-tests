@@ -1,0 +1,3 @@
+proc ttest data = "c:\mydata\hsb2" h0 = 50;
+  var write;
+run;
