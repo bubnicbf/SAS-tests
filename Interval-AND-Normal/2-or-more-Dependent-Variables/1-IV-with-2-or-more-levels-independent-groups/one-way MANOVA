@@ -1,0 +1,9 @@
+/*
+MANOVA (multivariate analysis of variance) is like ANOVA, except that there are two or more dependent variables. In a one-way MANOVA, there is one categorical independent variable and two or more dependent variables. For example, using the hsb2 data file, say we wish to examine the differences in read, write and math broken down by program type (prog).  The manova statement is necessary in the proc glm to tell SAS to conduct a MANOVA.  The h= on the manova statement is used to specify the hypothesized effect.
+*/
+proc glm data = "c:\mydata\hsb2";
+  class prog;
+  model read write math = prog;
+  manova h=prog;
+run;
+quit;
