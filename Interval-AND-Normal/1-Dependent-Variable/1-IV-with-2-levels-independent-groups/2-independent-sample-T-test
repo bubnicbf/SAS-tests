@@ -1,0 +1,4 @@
+proc ttest data = "c:\mydata\hsb2";
+  class female;
+  var write;
+run;
