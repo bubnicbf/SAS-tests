@@ -1,0 +1,6 @@
+/*
+A chi-square test is used when you want to see if there is a relationship between two categorical variables.  In SAS, the chisq option is used on the tables statement to obtain the test statistic and its associated p-value.  Using the hsb2 data file, let's see if there is a relationship between the type of school attended (schtyp) and students' gender (female).  Remember that the chi-square test assumes that the expected value for each cell is five or higher.  This assumption is easily met in the examples below.  However, if this assumption is not met in your data, please see the section on Fisher's exact test below.
+*/
+proc freq data = "c:\mydata\hsb2";
+  tables schtyp*female / chisq;
+run;
