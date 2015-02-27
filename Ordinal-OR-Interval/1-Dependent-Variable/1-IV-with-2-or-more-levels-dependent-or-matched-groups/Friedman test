@@ -1,0 +1,15 @@
+/*
+You perform a Friedman test when you have one within-subjects independent variable with two or more levels and a dependent variable that is not interval and normally distributed (but at least ordinal).  We will use this test to determine if there is a difference in the reading, writing and math scores.  The null hypothesis in this test is that the distribution of the ranks of each type of score (i.e., reading, writing and math) are the same.  To conduct a Friedman test, the data need to be in a long format; we will use proc transpose to change our data from the wide format that they are currently in to a long format.  We create a variable to code for the type of score, which we will call rwm (for read, write, math), and col1 that contains the score on the dependent variable, that is the reading, writing or math score.  To obtain the Friedman test, you need to use the cmh2 option on the tables statement in proc freq. 
+*/
+proc sort data = "c:\mydata\hsb2" out=hsbsort;
+  by id;
+run;
+
+proc transpose data=hsbsort out=hsblong name=rwm;
+  by id;
+  var read write math;
+run;
+
+proc freq data=hsblong;
+  tables id*rwm*col1 / cmh2 scores=rank noprint;
+run;
