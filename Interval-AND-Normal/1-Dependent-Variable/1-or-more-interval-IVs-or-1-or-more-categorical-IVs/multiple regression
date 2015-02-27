@@ -1,0 +1,7 @@
+/*
+Multiple regression is very similar to simple regression, except that in multiple regression you have more than one predictor variable in the equation.  For example, using the hsb2 data file we will predict writing score from gender (female), reading, math, science and social studies (socst) scores.  The stb option on the model statement tells SAS to display the standardized regression coefficients (seen on the far right of the output).
+*/
+proc reg data = "c:\mydata\hsb2";
+  model write = female read math science socst / stb;
+run;
+quit;
