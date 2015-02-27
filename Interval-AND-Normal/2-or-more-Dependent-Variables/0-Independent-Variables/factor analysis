@@ -1,0 +1,6 @@
+/*
+Factor analysis is a form of exploratory multivariate analysis that is used to either reduce the number of variables in a model or to detect relationships among variables.  All variables involved in the factor analysis need to be continuous and are assumed to be normally distributed.  The goal of the analysis is to try to identify factors which underlie the variables.  There may be fewer factors than variables, but there may not be more factors than variables.  For our example, let's suppose that we think that there are some common factors underlying the various test scores.  We will use the principal components method of extraction, use a varimax rotation, extract two factors and obtain a scree plot of the eigenvalues.  All of these options are listed on the proc factor statement.
+*/
+proc factor data = "c:\mydata\hsb2" method=principal rotate=varimax nfactors=2 scree;
+  var read write math science socst;
+run;
