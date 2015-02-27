@@ -1,0 +1,6 @@
+/*
+A Spearman correlation is used when one or both of the variables are not assumed to be normally distributed and interval (but are assumed to be ordinal). The values of the variables are converted in ranks and then correlated.  In our example, we will look for a relationship between read and write.  We will not assume that both of these variables are normal and interval.  The spearman option on the proc corr statement is used to tell SAS to perform a Spearman rank correlation instead of a Pearson correlation.
+*/
+proc corr data = "c:\mydata\hsb2" spearman;
+  var read write;
+run;
