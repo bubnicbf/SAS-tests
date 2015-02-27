@@ -1,0 +1,7 @@
+/*
+A one sample binomial test allows us to test whether the proportion of successes on a two-level categorical dependent variable significantly differs from a hypothesized value.  For example, using the hsb2 data file, say we wish to test whether the proportion of females (female) differs significantly from 50%, i.e., from .5.  We will use the exact statement to produce the exact p-values.
+*/
+proc freq data = "c:\mydata\hsb2";
+  tables female / binomial(p=.5);
+  exact binomial;
+run;
