@@ -1,0 +1,7 @@
+/*
+Discriminant analysis is used when you have one or more normally distributed interval independent variables and a categorical dependent variable.  It is a multivariate technique that considers the latent dimensions in the independent variables for predicting group membership in the categorical dependent variable.  For example, using the hsb2 data file, say we wish to use read, write and math scores to predict the type of program (prog) to which a student belongs.  
+*/
+proc discrim data = "c:\mydata\hsb2" can;
+  class prog;
+  var read write math;
+run;
