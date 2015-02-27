@@ -1,0 +1,11 @@
+/*
+The Wilcoxon signed rank sum test is the non-parametric version of a paired samples t-test.  You use the Wilcoxon signed rank sum test when you do not wish to assume that the difference between the two variables is interval and normally distributed (but you do assume the difference is ordinal). We will use the same example as above, but we will not assume that the difference between read and write is interval and normally distributed.  We will first do a data step to create the difference of the two scores for each subject.  This is necessary because SAS will not calculate the difference for you in proc univariate. 
+*/
+data hsb2a;
+  set 'c:\mydatahsb2';
+  diff = read - write;
+run;
+
+proc univariate data = hsb2a;
+  var diff;
+run;
