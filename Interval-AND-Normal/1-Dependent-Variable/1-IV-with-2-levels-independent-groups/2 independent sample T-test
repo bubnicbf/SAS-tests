@@ -1,3 +1,6 @@
+/*
+An independent samples t-test is used when you want to compare the means of a normally distributed interval dependent variable for two independent groups.  For example, using the hsb2 data file, say we wish to test whether the mean for write is the same for males and females.
+*/
 proc ttest data = "c:\mydata\hsb2";
   class female;
   var write;
