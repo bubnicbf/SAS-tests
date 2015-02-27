@@ -1,0 +1,7 @@
+/*
+The Wilcoxon-Mann-Whitney test is a non-parametric analog to the independent samples t-test and can be used when you do not assume that the dependent variable is a normally distributed interval variable (you need only assume that the variable is at least ordinal).  We will use the same data file (the hsb2 data file) and the same variables in this example as we did in the independent t-test example above and will not assume that write, our dependent variable, is normally distributed.
+*/
+proc npar1way data = "c:\mydata\hsb2" wilcoxon;
+  class female;
+  var write;
+run;
