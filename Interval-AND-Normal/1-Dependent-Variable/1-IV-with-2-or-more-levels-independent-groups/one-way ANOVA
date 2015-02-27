@@ -1,3 +1,6 @@
+/*
+A one-way analysis of variance (ANOVA) is used when you have a categorical independent variable (with two or more categories) and a normally distributed interval dependent variable and you wish to test for differences in the means of the dependent variable broken down by the levels of the independent variable.  For example, using the hsb2 data file, say we wish to test whether the mean of write differs between the three program types (prog).  We will also use the means statement to output the mean of write for each level of program type.  Note that this will not tell you if there is a statistically significant difference between any two sets of means.
+*/
 proc glm data = "c:\mydata\hsb2";
   class prog;
   model write = prog;
