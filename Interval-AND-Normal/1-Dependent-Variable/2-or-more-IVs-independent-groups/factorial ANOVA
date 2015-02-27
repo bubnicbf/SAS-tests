@@ -1,0 +1,5 @@
+proc glm data = "c:\mydata\hsb2";
+  class female ses;
+  model write = female ses female*ses;
+run;
+quit;
