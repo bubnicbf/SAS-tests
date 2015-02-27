@@ -1,0 +1,17 @@
+/*
+You would perform McNemar's test if you were interested in the marginal frequencies of two binary outcomes. These binary outcomes may be the same outcome variable on matched pairs (like a case-control study) or two outcome variables from a single group.  Let us consider two questions, Q1 and Q2, from a test taken by 200 students. Suppose 172 students answered both questions correctly, 15 students answered both questions incorrectly, 7 answered Q1 correctly and Q2 incorrectly, and 6 answered Q2 correctly and Q1 incorrectly. These counts can be considered in a two-way contingency table.  The null hypothesis is that the two questions are answered correctly or incorrectly at the same rate (or that the contingency table is symmetric).
+*/
+data set1;
+  input Q1correct Q2correct students;
+  datalines;
+  1 1 172
+  0 1 6
+  1 0 7
+  0 0 15
+run;
+
+proc freq data=set1;
+  table Q1correct*Q2correct;
+  exact mcnem;
+  weight students;
+run;
