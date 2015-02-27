@@ -1,0 +1,8 @@
+/*
+If you have a binary outcome measured repeatedly for each subject and you wish to run a logistic regression that accounts for the effect of multiple measures from single subjects, you can perform a repeated measures logistic regression.  In SAS, this can be done by using the genmod procedure and indicating binomial as the probability distribution and logit as the link function to be used in the model. The exercise data file contains three pulse measurements from each of 30 people assigned to two different diet regiments and three different exercise regiments. If we define a "high" pulse as being over 100, we can then predict the probability of a high pulse using diet regiment.
+*/
+proc genmod data='c:\mydata\exercise' descending;
+  class id diet / descending;
+  model highpulse = diet / dist = bin link = logit;
+  repeated subject = id / type = exch;
+run;
