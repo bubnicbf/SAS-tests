@@ -1,0 +1,7 @@
+/*
+Simple linear regression allows us to look at the linear relationship between one normally distributed interval predictor and one normally distributed interval outcome variable.  For example, using the hsb2 data file, say we wish to look at the relationship between writing scores (write) and reading scores (read); in other words, predicting write from read.  
+*/
+proc reg data = "c:\mydata\hsb2";
+  model write = read / stb;
+run;
+quit;
