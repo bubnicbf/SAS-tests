@@ -1,0 +1,6 @@
+proc glm data = "c:\mydata\hsb2";
+  class prog;
+  model write = prog;
+  means prog;
+run;
+quit;
