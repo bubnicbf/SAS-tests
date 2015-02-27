@@ -1,0 +1,7 @@
+/*
+The Kruskal Wallis test is used when you have one independent variable with two or more levels and an ordinal dependent variable. In other words, it is the non-parametric version of ANOVA.  It is also a generalized form of the Mann-Whitney test method, as it permits two or more groups.  We will use the same data file as the one way ANOVA example above (the hsb2 data file) and the same variables as in the example above, but we will not assume that write is a normally distributed interval variable.
+*/
+proc npar1way data = "c:\mydata\hsb2";
+  class prog;
+  var write;
+run;
