@@ -1,3 +1,6 @@
+/*
+A one sample t-test allows us to test whether a sample mean (from a normally distributed interval variable) significantly differs from a hypothesized value.  For example, using the hsb2 data file, say we wish to test whether the average writing score (write) differs significantly from 50.  We can do this as shown below.
+*/
 proc ttest data = "c:\mydata\hsb2" h0 = 50;
   var write;
 run;
