@@ -1,0 +1,5 @@
+proc glm data = 'c:\mydata\rb4wide';
+  model y1 y2 y3 y4 = ;
+  repeated a ;
+run;
+quit;
