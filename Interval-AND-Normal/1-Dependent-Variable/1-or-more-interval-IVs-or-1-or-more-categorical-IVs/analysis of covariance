@@ -1,0 +1,8 @@
+/*
+Analysis of covariance is like ANOVA, except in addition to the categorical predictors you have continuous predictors as well.  For example, the one way ANOVA example used write as the dependent variable and prog as the independent variable.  Let's add read as a continuous variable to this model.
+*/
+proc glm data = "c:\mydata\hsb2";
+  class prog;
+  model write = prog read;
+run;
+quit;
