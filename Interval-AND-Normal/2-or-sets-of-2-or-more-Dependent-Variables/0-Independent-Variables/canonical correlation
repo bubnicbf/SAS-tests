@@ -1,0 +1,7 @@
+/*
+Canonical correlation is a multivariate technique used to examine the relationship between two groups of variables.  For each set of variables, it creates latent variables and looks at the relationships among the latent variables. It assumes that all variables in the model are interval and normally distributed.  In SAS, one group of variables is placed on the var statement and the other group on the with statement.  There need not be an equal number of variables in the two groups.  The all option on the proc cancorr statement provides additional output that many researchers might find useful.
+*/
+proc cancorr data = "c:\mydata\hsb2" all;
+  var read write;
+  with math science;
+run;
