@@ -1,0 +1,13 @@
+/*
+Ordered logistic regression is used when the dependent variable is ordered, but not continuous.  For example, using the hsb2 data file we will create an ordered variable called write3.  This variable will have the values 1, 2 and 3, indicating a low, medium or high writing score.  We do not generally recommend categorizing a continuous variable in this way; we are simply creating a variable to use for this example.  We will use gender (female), reading score (read) and social studies score (socst) as predictor variables in this model.  The desc option on the proc logistic statement is used so that SAS models the odds of being in the lower category.  The Response Profile table in the output shows the value that SAS used when conducting the analysis (given in the Ordered Value column), the value of the original variable, and the number of cases in each level of the outcome variable.  (If you want SAS to use the values that you have assigned the outcome variable, then you would want to use the order = data option on the proc logistic statement.)  The note below this table reminds us that the "Probabilities modeled are cumulated over the lower Ordered Values."  It is helpful to remember this when interpreting the output.  The expb option on the model statement tells SAS to show the exponentiated coefficients (i.e., the proportional odds ratios).
+*/
+data hsb2_ordered;
+  set "c:\mydata\hsb2";
+  if 30 <= write <=48 then write3 = 1;
+  if 49 <= write <=57 then write3 = 2;
+  if 58 <= write <=70 then write3 = 3;
+run;
+
+proc logistic data = hsb2_ordered desc;
+  model write3 = female read socst / expb;
+run;
