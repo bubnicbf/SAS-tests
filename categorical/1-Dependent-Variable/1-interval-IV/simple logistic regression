@@ -1,0 +1,6 @@
+/*
+Logistic regression assumes that the outcome variable is binary (i.e., coded as 0 and 1).  We have only one variable in the hsb2 data file that is coded 0 and 1, and that is female.  We understand that female is a silly outcome variable (it would make more sense to use it as a predictor variable), but we can use female as the outcome variable to illustrate how the code for this command is structured and how to interpret the output.  The first variable listed on the model statement is the outcome (or dependent) variable, and all of the rest of the variables are listed after the equals sign and are predictor (or independent) variables.  You can use the expb option on the model statement if you want to see the odds ratios.  In our example, female will be the outcome variable, and read will be the predictor variable.  As with OLS regression, the predictor variables must be either dichotomous or continuous; they cannot be categorical.
+*/
+proc logistic data = "c:\mydata\hsb2" desc;
+  model female = read / expb;
+run;
