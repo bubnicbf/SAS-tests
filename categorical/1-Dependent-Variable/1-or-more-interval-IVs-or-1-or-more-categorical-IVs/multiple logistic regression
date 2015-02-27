@@ -1,0 +1,6 @@
+/*
+Multiple logistic regression is like simple logistic regression, except that there are two or more predictors.  The predictors can be interval variables or dummy variables, but cannot be categorical variables.  If you have categorical predictors, they should be coded into one or more dummy variables. We have only one variable in our data set that is coded 0 and 1, and that is female.  We understand that female is a silly outcome variable (it would make more sense to use it as a predictor variable), but we can use female as the outcome variable to illustrate how the code for this command is structured and how to interpret the output.  In our example, female will be the outcome variable, and read and write will be the predictor variables.  The desc option on the proc logistic statement is necessary so that SAS models the probability of being female (i.e., female = 1).  The expb option on the model statement tells SAS to display the exponentiated coefficients (i.e., the odds ratios).
+*/
+proc logistic data = "c:\mydata\hsb2" desc;
+  model female = read write / expb;
+run;
