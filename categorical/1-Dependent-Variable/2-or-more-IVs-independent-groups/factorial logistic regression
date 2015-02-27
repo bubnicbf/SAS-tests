@@ -1,0 +1,7 @@
+/*
+A factorial logistic regression is used when you have two or more categorical independent variables but a dichotomous dependent variable.  For example, using the hsb2 data file we will use female as our dependent variable, because it is the only dichotomous variable in our data set; certainly not because it common practice to use gender as an outcome variable.  We will use type of program (prog) and school type (schtyp) as our predictor variables.  Because neither prog nor schtyp are continuous variables, we need to include them on the class statement.  The desc option on the proc logistic statement is necessary so that SAS models the odds of being female (i.e., female = 1).  The expb option on the model statement tells SAS to show the exponentiated coefficients (i.e., the odds ratios).
+*/
+proc logistic data = "c:\mydata\hsb2" desc;
+  class prog schtyp;
+  model female = prog schtyp prog*schtyp / expb;
+run;
