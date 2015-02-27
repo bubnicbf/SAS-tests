@@ -1,8 +1,0 @@
-/*
-A factorial ANOVA has two or more categorical independent variables (either with or without the interactions) and a single normally distributed interval dependent variable.  For example, using the hsb2 data file we will look at writing scores (write) as the dependent variable and gender (female) and socio-economic status (ses) as independent variables, and we will include an interaction of female by ses.  Note that in SAS, you do not need to have the interaction term(s) in your data set.  Rather, you can have SAS create it/them temporarily by placing an asterisk between the variables that will make up the interaction term(s).
-*/
-proc glm data = "c:\mydata\hsb2";
-  class female ses;
-  model write = female ses female*ses;
-run;
-quit;
